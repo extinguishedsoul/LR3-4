@@ -1,18 +1,17 @@
 def main():
     N = int(input('Введите кол-во спортсменов: '))
-    
-    print('Введите результат и фамилию первого спортсмена:')
-    lchshrsltt = float(input())
-    fmlpbdtl = input()
+    maxFml = ''
+    maxRsltt = 100000
+    for i in range(N):
+        
+        print('Введите результат и фамилию спортсмена:')
+        lchshrsltt = float(input()) #res 1
+        fmlpbdtl = input() # surname 1
 
-    for i in range(2, N + 1):
-        print('Введите результат и фамилию следующего спортсмена:')
-        rsltt = float(input())
-        fml = input()
+        if (lchshrsltt < maxRsltt):
+            maxRsltt = lchshrsltt 
+            maxFml = fmlpbdtl
 
-        if rsltt < lchshrsltt:
-            lchshrsltt = rsltt
-            fmlpbdtl = fml 
-            print('Победил', fmlpbdtl, 'с результатом:', lchshrsltt)
+    print('Победил', maxFml, 'с результатом:', maxRsltt)
 
 main()
